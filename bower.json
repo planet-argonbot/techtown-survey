@@ -1,0 +1,20 @@
+{
+  "name": "techtown-survey",
+  "version": "0.0.0",
+  "authors": [
+    "Corinne Kunze <corinne@planetargon.com>"
+  ],
+  "description": "Diversity Survey for TechTown Portland",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "chartist": "~0.9.8",
+    "jquery": "~3.0.0"
+  }
+}
