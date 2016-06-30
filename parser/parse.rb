@@ -28,7 +28,21 @@ class User
   end
 end
 
-@users = Array.new
+class UserGroup < Array
+  # creates new UserGroup class and returns filtered users
+  def find_user(key, value)
+    new_class = UserGroup.new
+    user_array = select {|user| user.send(key) == value}
+
+    user_array.each do |user|
+      new_class.push(user)
+    end
+
+    new_class
+  end
+end
+
+@users = UserGroup.new
 
 def create_user_profile(data, id)
   person = User.new
@@ -49,10 +63,6 @@ CSV.foreach("techtownnewheaders.csv", headers: true) do |row|
   end
   # $. will show the current line number - 1 to account for heading row
   create_user_profile(row.to_hash, $.)
-end
-
-def find_user(key, value)
-  @users.select {|user| user.send(key) == value}
 end
 
 binding.pry
