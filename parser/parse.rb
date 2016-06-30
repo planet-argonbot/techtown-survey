@@ -40,6 +40,15 @@ class UserGroup < Array
 
     new_class
   end
+
+  def count_users(keys, value)
+    user_counts = Array.new
+    keys.each do |key|
+      relevant_users = find_all {|user| user.send(key) == value}
+      user_counts.push({key => relevant_users.count})
+    end
+    user_counts
+  end
 end
 
 @users = UserGroup.new
