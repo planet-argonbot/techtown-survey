@@ -48,5 +48,11 @@ CSV.foreach("techtownnewheaders.csv", headers: true) do |row|
     question[0] = sample_user.headers[index]
   end
   # $. will show the current line number - 1 to account for heading row
-  create_user_profile(row.to_hash, $. - 1)
+  create_user_profile(row.to_hash, $.)
 end
+
+def find_user(key, value)
+  @users.select {|user| user.send(key) == value}
+end
+
+binding.pry
