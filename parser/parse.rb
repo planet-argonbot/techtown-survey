@@ -32,7 +32,21 @@ class UserGroup < Array
   # creates new UserGroup class and returns filtered users
   def find_user(key, value)
     new_class = UserGroup.new
-    user_array = select {|user| user.send(key) == value}
+
+    if (key.kind_of?(Array))
+      user_array = UserGroup.new
+
+      key.each do |k|
+        matching_users = select {|user| user.send(k) == value}
+        matching_users.each do |match|
+          if user_array.matching_users("user_id", match.user_id).length < 1
+            user_array.push(match)
+          end
+        end
+      end
+    else
+      user_array = matching_users(key, value)
+    end
 
     user_array.each do |user|
       new_class.push(user)
@@ -41,13 +55,21 @@ class UserGroup < Array
     new_class
   end
 
+  def matching_users(attrName, attrValue)
+    select { |user| user.send(attrName) == attrValue }
+  end
+
   def count_users(keys, value)
     user_counts = Array.new
     keys.each do |key|
-      relevant_users = find_all {|user| user.send(key) == value}
+      relevant_users = matching_users(key, value)
       user_counts.push({key => relevant_users.count})
     end
     user_counts
+  end
+
+  def person_of_color
+    self.find_user(["north_american_native", "hispanic_or_latino", "african_or_african_american", "pacific_islander", "asian", "middle_eastern", "north_african"], "1")
   end
 end
 
