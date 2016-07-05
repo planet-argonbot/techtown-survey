@@ -33,15 +33,21 @@ class UserGroup < Array
   def find_user(key, value)
     new_class = UserGroup.new
 
-    if (key.kind_of?(Array))
+    if (value.kind_of?(Array) || key.kind_of?(Array))
       user_array = UserGroup.new
+      if (value.kind_of?(Array))
+        value.each do |val|
+          users_match = select {|user| user.send(key) == val}
 
-      key.each do |k|
-        matching_users = select {|user| user.send(k) == value}
-        matching_users.each do |match|
-          if user_array.matching_users("user_id", match.user_id).length < 1
-            user_array.push(match)
-          end
+          collect_users(users_match, user_array)
+        end
+      end
+
+      if (key.kind_of?(Array))
+        key.each do |k|
+          users_match = select {|user| user.send(k) == value}
+
+          collect_users(users_match, user_array)
         end
       end
     else
@@ -55,6 +61,14 @@ class UserGroup < Array
     new_class
   end
 
+  def collect_users(users_matching, array_of_users)
+    users_matching.each do |match|
+      if array_of_users.matching_users("user_id", match.user_id).length < 1
+        array_of_users.push(match)
+      end
+    end
+  end
+
   def matching_users(attrName, attrValue)
     select { |user| user.send(attrName) == attrValue }
   end
@@ -66,6 +80,10 @@ class UserGroup < Array
       user_counts.push({key => relevant_users.count})
     end
     user_counts
+  end
+
+  def management_position
+    self.find_user("leadership_position", ["1", "2", "3"])
   end
 
   def person_of_color
