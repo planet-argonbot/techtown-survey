@@ -5,7 +5,66 @@ require 'pry'
 # http://stackoverflow.com/a/4082937/3294591
 
 class User
-  HEADERS = ["location", "hired_before_july", "tech_position", "leadership_position", "successful_environment", "professional_progression", "education", "age", "male", "female", "non_binary", "trans", "cis", "other", "no_response_gender", "other_gender_text", "north_american_native", "american_indian", "alaskan_native", "canadian_indigenous", "indigenous_south_american", "hispanic_or_latino", "mexican", "hispanic_central_american", "hispanic_south_american", "other_hispanic", "african_or_african_american", "african_american", "african", "caribbean", "other_black", "pacific_islander", "native_hawaiian", "samoan", "other_pacific_islander", "asian", "chinese", "vietnamese", "korean", "laotian", "filipino", "japanese", "south_asian", "asian_indian", "white", "slavic", "middle_eastern", "north_african", "no_response_ethnicity", "lgbtq", "veteran", "disabled", "disabled_other", "other_underrepresented", "do_not_identify", "no_response_other", "other_underrepresented_text"]
+  HEADERS = [
+    "location",
+    "hired_before_july",
+    "tech_position",
+    "leadership_position",
+    "successful_environment",
+    "professional_progression",
+    "education",
+    "age",
+    "male",
+    "female",
+    "non_binary",
+    "trans",
+    "cis",
+    "other",
+    "no_response_gender",
+    "other_gender_text",
+    "north_american_native",
+    "american_indian",
+    "alaskan_native",
+    "canadian_indigenous",
+    "indigenous_south_american",
+    "hispanic_or_latino",
+    "mexican",
+    "hispanic_central_american",
+    "hispanic_south_american",
+    "other_hispanic",
+    "african_or_african_american",
+    "african_american",
+    "african",
+    "caribbean",
+    "other_black",
+    "pacific_islander",
+    "native_hawaiian",
+    "guamanian",
+    "samoan",
+    "other_pacific_islander",
+    "asian",
+    "chinese",
+    "vietnamese",
+    "korean",
+    "laotian",
+    "filipino",
+    "japanese",
+    "south_asian",
+    "asian_indian",
+    "white",
+    "slavic",
+    "middle_eastern",
+    "north_african",
+    "no_response_ethnicity",
+    "lgbtq",
+    "veteran",
+    "disabled",
+    "disabled_other",
+    "other_underrepresented",
+    "do_not_identify",
+    "no_response_other",
+    "other_underrepresented_text"
+  ]
 
   def initialize
     # add all headers to class
@@ -92,6 +151,11 @@ class UserGroup < Array
   def person_of_color
     self.find_user(["north_american_native", "hispanic_or_latino", "african_or_african_american", "pacific_islander", "asian", "middle_eastern", "north_african"], "1")
   end
+
+  def lgbt_id
+    self.find_user(['lgbtq', 'trans'], '1')
+  end
+
 end
 
 @users = UserGroup.new
