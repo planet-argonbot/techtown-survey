@@ -29,4 +29,9 @@ $(function() {
 	new Chartist.Pie('.ct-chart1', data, options, responsiveOptions);
 	new Chartist.Pie('.ct-chart2', data, options, responsiveOptions);
 	new Chartist.Pie('.ct-chart3', data, options, responsiveOptions);
+
+	$('.filter-list li').on('click', function() {
+		$('.filter-list li a').removeClass('active');
+		$(this).find('a').addClass('active');
+	});
 });
