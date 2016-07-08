@@ -1,0 +1,261 @@
+
+
+// =======================
+// Typography
+// =======================
+
+.font-weight--light {
+  font-weight: 400;
+}
+.font-weight--regular {
+  font-weight: 500;
+}
+.font-weight--medium {
+  font-weight: 600;
+}
+.font-weight--bold,
+strong,
+b {
+  // font-weight: 700;
+  font-weight: bold;
+}
+.font--italic {
+  font-style: italic;
+}
+.link--underline {
+  text-decoration: underline;
+}
+.display--inline {
+  display: inline;
+}
+.display--inline-block {
+  display: inline-block;
+}
+.display--block {
+  display: block;
+}
+.display--none {
+  display: none;
+}
+.position--fixed {
+  position: fixed;
+}
+.position--relative {
+  position: relative;
+}
+.hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.cursor--pointer {
+  cursor: pointer;
+}
+.line-height--reset {
+  line-height: 1;
+}
+.list--unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+.list--inline {
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+}
+.list--inline > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+// =======================
+// Mixins
+// =======================
+
+@mixin transition($prop, $duration, $timing, $opt-delay:"") {
+  -webkit-transition: $prop $duration $timing unquote($opt-delay);
+  -moz-transition: $prop $duration $timing unquote($opt-delay);
+  -o-transition: $prop $duration $timing unquote($opt-delay);
+  transition: $prop $duration $timing unquote($opt-delay);
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box-shadow($horizontal, $vertical, $blur, $color) {
+  -webkit-box-shadow: $horizontal $vertical $blur $color;
+  -moz-box-shadow: $horizontal $vertical $blur $color;
+  box-shadow: $horizontal $vertical $blur $color;
+}
+
+// =======================
+// Utilities
+// =======================
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: " ";
+}
+.clearfix:after {
+  clear: both;
+}
+.full-width {
+  width: 100%;
+}
+.float--right {
+  float: right;
+}
+.float--left {
+  float: left;
+}
+.float--none {
+  float: none;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.text-left {
+  text-align: left
+}
+.text-right {
+  text-align: right
+}
+.text-center {
+  text-align: center
+}
+.text-justify {
+  text-align: justify
+}
+
+// Borders
+
+.border--all {
+  border: 1px solid #ccc;
+}
+.border--bottom {
+  border-bottom: 1px solid #ccc;
+}
+.border--top {
+  border-top: 1px solid #ccc;
+}
+.border--right {
+  border-right: 1px solid #ccc;
+}
+.border--left {
+  border-left: 1px solid #ccc;
+}
+
+// Spacing Utilities
+
+$xxs-padding:   5px;
+$xs-padding:    10px;
+$sm-padding:    20px;
+$md-padding:    30px;
+$lg-padding:    40px;
+$xl-padding:    50px;
+$xxl-padding:   60px;
+
+
+.padding-0          { padding: 0                      }
+.padding-xxs        { padding: $xxs-padding           }
+.padding-xs         { padding: $xs-padding            }
+.padding-sm         { padding: $sm-padding            }
+.padding-md         { padding: $md-padding            }
+.padding-lg         { padding: $lg-padding            }
+.padding-xl         { padding: $xl-padding            }
+.padding-xxl        { padding: $xxl-padding           }
+
+.padding-top-0      { padding-top: 0                  }
+.padding-top-xxs    { padding-top: $xxs-padding       }
+.padding-top-xs     { padding-top: $xs-padding        }
+.padding-top-sm     { padding-top: $sm-padding        }
+.padding-top-md     { padding-top: $md-padding        }
+.padding-top-lg     { padding-top: $lg-padding        }
+.padding-top-xl     { padding-top: $xl-padding        }
+.padding-top-xxl    { padding-top: $xxl-padding       }
+
+.padding-right-0    { padding-right: 0                }
+.padding-right-xxs  { padding-right: $xxs-padding     }
+.padding-right-xs   { padding-right: $xs-padding      }
+.padding-right-sm   { padding-right: $sm-padding      }
+.padding-right-md   { padding-right: $md-padding      }
+.padding-right-lg   { padding-right: $lg-padding      }
+.padding-right-xl   { padding-right: $xl-padding      }
+.padding-right-xxl  { padding-right: $xxl-padding     }
+
+.padding-bottom-0   { padding-bottom: 0               }
+.padding-bottom-xxs { padding-bottom: $xxs-padding    }
+.padding-bottom-xs  { padding-bottom: $xs-padding     }
+.padding-bottom-sm  { padding-bottom: $sm-padding     }
+.padding-bottom-md  { padding-bottom: $md-padding     }
+.padding-bottom-lg  { padding-bottom: $lg-padding     }
+.padding-bottom-xl  { padding-bottom: $xl-padding     }
+.padding-bottom-xxl { padding-bottom: $xxl-padding    }
+
+.padding-left-0     { padding-left: 0                 }
+.padding-left-xxs   { padding-left: $xxs-padding      }
+.padding-left-xs    { padding-left: $xs-padding       }
+.padding-left-sm    { padding-left: $sm-padding       }
+.padding-left-md    { padding-left: $md-padding       }
+.padding-left-lg    { padding-left: $lg-padding       }
+.padding-left-xl    { padding-left: $xl-padding       }
+.padding-left-xxl   { padding-left: $xxl-padding      }
+
+$xxs-margin:   5px;
+$xs-margin:    10px;
+$sm-margin:    20px;
+$md-margin:    30px;
+$lg-margin:    40px;
+$xl-margin:    50px;
+$xxl-margin:   60px;
+
+.margin-0           { margin: 0                       }
+.margin-xxs         { margin: $xxs-margin             }
+.margin-xs          { margin: $xs-margin              }
+.margin-sm          { margin: $sm-margin              }
+.margin-md          { margin: $md-margin              }
+.margin-lg          { margin: $lg-margin              }
+.margin-xl          { margin: $xl-margin              }
+.margin-xxl         { margin: $xxl-margin             }
+
+.margin-top-0       { margin-top: 0                   }
+.margin-top-xxs     { margin-top: $xxs-margin         }
+.margin-top-xs      { margin-top: $xs-margin          }
+.margin-top-sm      { margin-top: $sm-margin          }
+.margin-top-md      { margin-top: $md-margin          }
+.margin-top-lg      { margin-top: $lg-margin          }
+.margin-top-xl      { margin-top: $xl-margin          }
+.margin-top-xxl     { margin-top: $xxl-margin         }
+
+.margin-right-0     { margin-right: 0                 }
+.margin-right-xxs   { margin-right: $xxs-margin       }
+.margin-right-xs    { margin-right: $xs-margin        }
+.margin-right-sm    { margin-right: $sm-margin        }
+.margin-right-md    { margin-right: $md-margin        }
+.margin-right-lg    { margin-right: $lg-margin        }
+.margin-right-xl    { margin-right: $xl-margin        }
+.margin-right-xxl   { margin-right: $xxl-margin       }
+
+.margin-bottom-0    { margin-bottom: 0                }
+.margin-bottom-xxs  { margin-bottom: $xxs-margin      }
+.margin-bottom-xs   { margin-bottom: $xs-margin       }
+.margin-bottom-sm   { margin-bottom: $sm-margin       }
+.margin-bottom-md   { margin-bottom: $md-margin       }
+.margin-bottom-lg   { margin-bottom: $lg-margin       }
+.margin-bottom-xl   { margin-bottom: $xl-margin       }
+.margin-bottom-xxl  { margin-bottom: $xxl-margin      }
+
+.margin-left-0      { margin-left: 0                  }
+.margin-left-xxs    { margin-left: $xxs-margin        }
+.margin-left-xs     { margin-left: $xs-margin         }
+.margin-left-sm     { margin-left: $sm-margin         }
+.margin-left-md     { margin-left: $md-margin         }
+.margin-left-lg     { margin-left: $lg-margin         }
+.margin-left-xl     { margin-left: $xl-margin         }
+.margin-left-xxl    { margin-left: $xxl-margin        }

@@ -1,0 +1,68 @@
+// =======================
+// Colors
+// =======================
+
+$white: #fff;
+$black: #000;
+$link: #007a86;
+$text-color: #1F1724;
+
+// =======================
+// Fonts
+// =======================
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700);
+@font-face {
+    font-family: 'latoregular';
+    src: url('../fonts/lato-regular-webfont.eot');
+    src: url('../fonts/lato-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lato-regular-webfont.woff') format('woff'),
+         url('../fonts/lato-regular-webfont.ttf') format('truetype'),
+         url('../fonts/lato-regular-webfont.svg#latoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Google font "Lato" (Weights: regular - 400, bold - 700)
+$font-lato: "latoregular", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$font-roboto: 'Roboto', sans-serif;
+
+// =======================
+// Icons
+// =======================
+
+@font-face {
+ font-family: 'sc-icons';
+ src:url('fonts/sc-icons.eot?');
+ src:url('fonts/sc-icons.eot?#iefix') format('embedded-opentype'),
+   url('fonts/sc-icons.woff') format('woff'),
+   url('fonts/sc-icons.ttf') format('truetype'),
+   url('fonts/sc-icons.svg?#sc-icons') format('svg');
+ display: inline-block;
+ font-weight: normal;
+ font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"], .icon {
+ display: inline-block;
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+ font-family: 'sc-icons';
+ font-style: normal;
+ font-weight: normal;
+ font-variant: normal;
+ line-height: 1;
+ position: relative;
+ speak: none;
+ text-transform: none;
+ &.left-side:before {
+   margin-right: 20px;
+ }
+ &.right-side:before {
+   margin-left: 20px;
+ }
+}
+
+.icon-example:before {
+ content: "\e607";
+}
