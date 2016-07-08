@@ -26,4 +26,7 @@ $(function() {
 	];
 
 	new Chartist.Pie('.ct-chart', data, options, responsiveOptions);
+	new Chartist.Pie('.ct-chart1', data, options, responsiveOptions);
+	new Chartist.Pie('.ct-chart2', data, options, responsiveOptions);
+	new Chartist.Pie('.ct-chart3', data, options, responsiveOptions);
 });
