@@ -6,7 +6,7 @@ $(function() {
 
 	var options = {
 	  labelInterpolationFnc: function(value) {
-	    return value[0]
+	    return value[0];
 	  }
 	};
 
