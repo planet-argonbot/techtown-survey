@@ -1,4 +1,4 @@
-var Survey = function() {
+(function() {
   var charts = {
     _charts: this,
 
@@ -31,18 +31,52 @@ var Survey = function() {
       this.options = options;
     },
 
-    chartCollection: [
-      _charts.chart("techPos", ".ct-chart", [], _charts.defaults),
-      _charts.chart("nonTechPos", ".ct-chart1", [], _charts.defaults),
-      _charts.chart("leaderPos", ".ct-chart2", [], _charts.defaults),
-      _charts.chart("managementPos", ".ct-chart3", [], _charts.defaults),
-    ]
+    chartsData: [
+      {
+        name: "techPos",
+        selector: ".ct-chart",
+        data: {
+          labels: [],
+          series: []
+        },
+        options: _charts.defaults
+      },
+      {
+        name: "nonTechPos",
+        selector: ".ct-chart1",
+        data: {
+          labels: [],
+          series: []
+        },
+        options: _charts.defaults
+      },
+      {
+        name: "leaderPos",
+        selector: ".ct-chart2",
+        data: {
+          labels: [],
+          series: []
+        },
+        options: _charts.defaults
+      },
+      {
+        name: "managementPos",
+        selector: ".ct-chart3",
+        data: {
+          labels: [],
+          series: []
+        },
+        options: _charts.defaults
+      },
+    ],
+
   };
 
   var build = {
     init: function() {
-      // initialize charts here
-
+      $.each(charts.chartsData, function(index, value) {
+        debugger;
+      });
     },
 
 
@@ -50,4 +84,7 @@ var Survey = function() {
       new Chartist.Pie(target, data, options, responsiveOptions);
     }
   };
-};
+
+  build.init();
+})();
+
