@@ -20,6 +20,12 @@ b {
 .font--italic {
   font-style: italic;
 }
+.font--white {
+  color: $white;
+}
+.font--black {
+  color: $black;
+}
 .link--underline {
   text-decoration: underline;
 }
@@ -37,6 +43,9 @@ b {
 }
 .position--fixed {
   position: fixed;
+}
+.position--absolute {
+  position: absolute;
 }
 .position--relative {
   position: relative;
@@ -102,6 +111,10 @@ b {
 }
 .clearfix:after {
   clear: both;
+}
+.col-centered {
+  float: none;
+  margin:0 auto;
 }
 .full-width {
   width: 100%;

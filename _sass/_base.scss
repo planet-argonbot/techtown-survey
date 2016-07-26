@@ -1,8 +1,70 @@
+// ======================
+// Overview Styles
+// ======================
+body {
+  font-family: $roboto;
+  -webkit-font-smoothing: antialiased;
+}
+
+// ======================
+// Typography
+// ======================
+h1 {
+  font-family: $varela;
+}
+h2 {
+  font-family: $varela;
+}
+h3 {
+  font-family: $varela;
+}
+// ======================
+// Buttons
+// ======================
+.btn-pink {
+  background-color: $pink;
+  color: $white;
+  @include transition(background-color, 0.2s, linear);
+  &:hover {
+    background-color: darken($pink, 10%);
+  }
+}
+// ======================
+// Page Styles
+// ======================
 svg:not(:root) {
   overflow: visible;
+}
+
+a {
+  @include transition(color, 0.2s, linear);
+  color: $black;
+  &:hover {
+    text-decoration: none;
+    color: lighten($black, 10%);
+  }
 }
 
 a.active {
 	color: #000;
 	font-weight: bold;
+}
+.navigation {
+  a {
+    font-family: $varela;
+    text-transform: uppercase;
+    color: $black;
+  }
+  .btn {
+    color: $white;
+  }
+}
+.diversity-headline {
+  h2 {
+    position: absolute;
+  }
+}
+.diversity-headline--text {
+  top: 50%;
+  margin-top: -20px;
 }
