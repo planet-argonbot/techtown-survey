@@ -9,14 +9,25 @@ body {
 // ======================
 // Typography
 // ======================
-h1 {
+h1, .h1 {
   font-family: $varela;
+  font-size: 50px;
 }
-h2 {
+h2, .h2 {
   font-family: $varela;
+  font-family: 40px;
 }
-h3 {
+h3, .h3 {
   font-family: $varela;
+  font-size: 32px;
+}
+h4, .h4 {
+  font-family: $varela;
+  font-size: 24px;
+  line-height:1.4;
+}
+p {
+  font-size: 20px;
 }
 // ======================
 // Buttons
@@ -32,6 +43,10 @@ h3 {
 // ======================
 // Page Styles
 // ======================
+.background--gray {
+  background-color: $gray;
+}
+
 svg:not(:root) {
   overflow: visible;
 }
