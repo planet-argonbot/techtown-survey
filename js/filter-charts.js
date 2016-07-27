@@ -2,6 +2,13 @@ var Survey = (function() {
   var charts = {
     defaults: {
       pie: {
+        options: {
+          donut: true,
+          donutWidth: 20,
+          // labelInterpolationFnc: function(value) {
+          //   return value[0];
+          // }
+        },
         responsiveOptions: [
           ['screen and (min-width: 640px)', {
             chartPadding: 30,
@@ -12,15 +19,10 @@ var Survey = (function() {
             }
           }],
           ['screen and (min-width: 1024px)', {
-            labelOffset: 80,
-            chartPadding: 20
+            labelOffset: 20,
+            chartPadding: 0
           }]
-        ],
-        options: {
-          labelInterpolationFnc: function(value) {
-            return value[0];
-          }
-        },
+        ]
       },
       bar: {
 
@@ -128,7 +130,7 @@ var Survey = (function() {
         if (value.type === 'bar') {
           chartsData[value.name] = new Chartist.Bar(value.selector, value.data);
         } else {
-          chartsData[value.name] = new Chartist.Pie(value.selector, value.data, value.options);
+          chartsData[value.name] = new Chartist.Pie(value.selector, value.data, value.options.options, value.options.responsiveOptions);
         }
       });
     },

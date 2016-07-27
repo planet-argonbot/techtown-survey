@@ -26,8 +26,14 @@ h4, .h4 {
   font-size: 24px;
   line-height:1.4;
 }
-p {
+h5, .h5 {
+  font-size: 22px;
+}
+h6, .h6 {
   font-size: 20px;
+}
+p {
+  font-size: 18px;
 }
 // ======================
 // Buttons
@@ -60,10 +66,6 @@ a {
   }
 }
 
-a.active {
-	color: #000;
-	font-weight: bold;
-}
 .navigation {
   a {
     font-family: $varela;
@@ -82,4 +84,45 @@ a.active {
 .diversity-headline--text {
   top: 50%;
   margin-top: -20px;
+}
+.quote {
+  position: relative;
+  &:before {
+    content: '“';
+    position: absolute;
+    font-size: 100px;
+    font-family: Georgia, serif;
+    top: -47px;
+    left: 25px;
+  }
+}
+.filter-list {
+  font-size: 0;
+  li {
+    display: inline-block;
+    font-size: 16px;
+  }
+  a {
+    padding: 5px 10px;
+    background-color: $gray;
+    &.active {
+      color: $white;
+      background-color: $pink;
+    }
+    &:active, &:focus {
+      text-decoration: none;
+    }
+  }
+}
+// ==============
+// Chart styles
+// ==============
+.ct-series-a .ct-point, .ct-series-a .ct-line, .ct-series-a .ct-bar, .ct-series-a .ct-slice-donut {
+  stroke: $aqua;
+}
+.ct-series-b .ct-point, .ct-series-b .ct-line, .ct-series-b .ct-bar, .ct-series-b .ct-slice-donut {
+  stroke: $lime;
+}
+.ct-series-c .ct-point, .ct-series-c .ct-line, .ct-series-c .ct-bar, .ct-series-c .ct-slice-donut {
+  stroke: $green;
 }
