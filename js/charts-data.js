@@ -23,7 +23,11 @@
     ]
   },
   bar: {
-
+    plugins: [
+      Chartist.plugins.tooltip({
+        currency: '$'
+      })
+    ]
   },
   // collection of labels here for less typos
   labels: {
