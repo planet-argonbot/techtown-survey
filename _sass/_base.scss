@@ -35,6 +35,35 @@ h6, .h6 {
 p {
   font-size: 18px;
 }
+.small {
+  font-size: 14px;
+}
+
+.varela {
+  font-family: $varela;
+}
+
+.roboto {
+  font-family: $roboto;
+}
+
+.roboto-thin {
+  font-family: $roboto;
+  font-weight: 300;
+}
+
+a {
+  @include transition(color, 0.2s, linear);
+  color: $black;
+  &:hover {
+    text-decoration: none;
+    color: lighten($black, 10%);
+  }
+}
+
+.white-link {
+  color: $white;
+}
 // ======================
 // Buttons
 // ======================
@@ -52,18 +81,12 @@ p {
 .background--gray {
   background-color: $gray;
 }
+.background--pink {
+  background-color: $pink;
+}
 
 svg:not(:root) {
   overflow: visible;
-}
-
-a {
-  @include transition(color, 0.2s, linear);
-  color: $black;
-  &:hover {
-    text-decoration: none;
-    color: lighten($black, 10%);
-  }
 }
 
 .navigation {
@@ -114,6 +137,11 @@ a {
     }
   }
 }
+.new-hires {
+  background: url('/images/portland-blur.jpg');
+  background-size: cover;
+  background-repeat: none;
+}
 // ==============
 // Chart styles
 // ==============
@@ -125,4 +153,10 @@ a {
 }
 .ct-series-c .ct-point, .ct-series-c .ct-line, .ct-series-c .ct-bar, .ct-series-c .ct-slice-donut {
   stroke: $green;
+}
+.ct-grid {
+  display: none;
+}
+.ct-bar {
+  stroke-width: 50px;
 }
