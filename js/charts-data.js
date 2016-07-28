@@ -3,9 +3,9 @@
     options: {
       donut: true,
       donutWidth: 20,
-      // labelInterpolationFnc: function(value) {
-      //   return value[0];
-      // }
+      labelInterpolationFnc: function(value) {
+        return value;
+      },
       plugins: [
         Chartist.plugins.tooltip({
           transformTooltipTextFnc: function(value) {
@@ -30,6 +30,11 @@
     ]
   },
   bar: {
+    axisY: {
+            labelInterpolationFnc: function(value) {
+              return value + ' %';
+            },
+          },
     plugins: [
       Chartist.plugins.tooltip({
         transformTooltipTextFnc: function(value) {
@@ -54,6 +59,8 @@
       {
         name: "techPos",
         selector: ".ct-chart",
+        type: "pie",
+        percentage: true,
         data: {
           labels: chartOptions.labels.gender,
           series: [468, 130, 19]
@@ -63,6 +70,8 @@
       {
         name: "nonTechPos",
         selector: ".ct-chart1",
+        type: "pie",
+        percentage: true,
         data: {
           labels: chartOptions.labels.gender,
           series: [346, 285, 14]
@@ -72,6 +81,8 @@
       {
         name: "leaderPos",
         selector: ".ct-chart2",
+        type: "pie",
+        percentage: true,
         data: {
           labels: chartOptions.labels.gender,
           series: [102, 56, 3]
@@ -81,6 +92,8 @@
       {
         name: "managementPos",
         selector: ".ct-chart3",
+        type: "pie",
+        percentage: true,
         data: {
           labels: chartOptions.labels.gender,
           series: [132, 85, 8]
@@ -92,6 +105,7 @@
       {
         name: "techPos",
         selector: ".ct-chart",
+        percentage: true,
         type: 'bar',
         data: {
           labels: chartOptions.labels.race,
@@ -102,6 +116,7 @@
       {
         name: "nonTechPos",
         selector: ".ct-chart1",
+        percentage: true,
         type: 'bar',
         data: {
           labels: chartOptions.labels.race,
@@ -112,6 +127,7 @@
       {
         name: "leaderPos",
         selector: ".ct-chart2",
+        percentage: true,
         type: 'bar',
         data: {
           labels: chartOptions.labels.race,
@@ -122,6 +138,7 @@
       {
         name: "managementPos",
         selector: ".ct-chart3",
+        percentage: true,
         type: 'bar',
         data: {
           labels: chartOptions.labels.race,
@@ -134,6 +151,7 @@
       {
         name: "techPos",
         selector: ".ct-chart",
+        percentage: true,
         type: 'bar',
         data: {
           labels: chartOptions.labels.education,
@@ -144,6 +162,7 @@
       {
         name: "nonTechPos",
         selector: ".ct-chart1",
+        percentage: true,
         type: 'bar',
         data: {
           labels: chartOptions.labels.education,
@@ -154,6 +173,7 @@
       {
         name: "leaderPos",
         selector: ".ct-chart2",
+        percentage: true,
         type: 'bar',
         data: {
           labels: chartOptions.labels.education,
@@ -164,6 +184,7 @@
       {
         name: "managementPos",
         selector: ".ct-chart3",
+        percentage: true,
         type: 'bar',
         data: {
           labels: chartOptions.labels.education,
@@ -176,6 +197,7 @@
       {
         name: "techPos",
         selector: ".ct-chart",
+        percentage: true,
         type: 'bar',
         data: {
           labels: chartOptions.labels.age,
@@ -186,6 +208,7 @@
       {
         name: "nonTechPos",
         selector: ".ct-chart1",
+        percentage: true,
         type: 'bar',
         data: {
           labels: chartOptions.labels.age,
@@ -196,6 +219,7 @@
       {
         name: "leaderPos",
         selector: ".ct-chart2",
+        percentage: true,
         type: 'bar',
         data: {
           labels: chartOptions.labels.age,
@@ -206,6 +230,7 @@
       {
         name: "managementPos",
         selector: ".ct-chart3",
+        percentage: true,
         type: 'bar',
         data: {
           labels: chartOptions.labels.age,
@@ -229,7 +254,7 @@
           ],
         },
         options: {
-          seriesBarDistance: 10,
+          seriesBarDistance: 20,
           axisX: {
             offset: 60
           },
@@ -263,7 +288,7 @@
           ],
         },
         options: {
-          seriesBarDistance: 10,
+          seriesBarDistance: 20,
           axisX: {
             offset: 60
           },
