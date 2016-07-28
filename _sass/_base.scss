@@ -63,6 +63,9 @@ a {
 
 .white-link {
   color: $white;
+  &:hover {
+    color: $white;
+  }
 }
 // ======================
 // Buttons
@@ -97,6 +100,8 @@ svg:not(:root) {
   }
   .btn {
     color: $white;
+    padding: 8px 10px;
+    border-radius: 0px;
   }
 }
 .diversity-headline {

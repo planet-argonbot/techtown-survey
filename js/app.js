@@ -10,7 +10,14 @@ $(function() {
 		e.preventDefault();
 	});
 
+  // when charts-done event is fired, set height of chart wrapper
+  // this prevents weird visual hopping when changing between chart filters
   document.addEventListener('charts-done', function(e) {
     $('.chart-wrapper').height($('.chart-wrapper').height());
+  });
+
+  $(window).on('resize', function() {
+    console.log('resized!');
+    $('.chart-wrapper').css('height', 'auto');
   });
 });
