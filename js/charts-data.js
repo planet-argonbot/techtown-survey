@@ -34,173 +34,232 @@
     gender: ['Male', 'Female', 'Non-Conforming'],
     race: ['Asian', 'Black', 'Hispanic', 'White', 'American Indian', 'Pacific Islander', 'Slavic', 'Middle Eastern'],
     education: ['Less Than High School', 'High School', 'Code School', 'Associate', 'Bachelor', 'Graduate'],
-    age: ['18-24', '25-34', '35-44', '45-54', '55-64', '65+']
+    age: ['18-24', '25-34', '35-44', '45-54', '55-64', '65+'],
+    workforce: ['Survey results', 'Software/tech', 'All Industries', 'General Population']
   }
 };
 
  var chartsData = {
-  gender: [
-    {
-      name: "techPos",
-      selector: ".ct-chart",
-      data: {
-        labels: chartOptions.labels.gender,
-        series: [468, 130, 19]
+  position: {
+    gender: [
+      {
+        name: "techPos",
+        selector: ".ct-chart",
+        data: {
+          labels: chartOptions.labels.gender,
+          series: [468, 130, 19]
+        },
+        options: chartOptions.pie
       },
-      options: chartOptions.pie
-    },
-    {
-      name: "nonTechPos",
-      selector: ".ct-chart1",
-      data: {
-        labels: chartOptions.labels.gender,
-        series: [346, 285, 14]
+      {
+        name: "nonTechPos",
+        selector: ".ct-chart1",
+        data: {
+          labels: chartOptions.labels.gender,
+          series: [346, 285, 14]
+        },
+        options: chartOptions.pie
       },
-      options: chartOptions.pie
-    },
-    {
-      name: "leaderPos",
-      selector: ".ct-chart2",
-      data: {
-        labels: chartOptions.labels.gender,
-        series: [102, 56, 3]
+      {
+        name: "leaderPos",
+        selector: ".ct-chart2",
+        data: {
+          labels: chartOptions.labels.gender,
+          series: [102, 56, 3]
+        },
+        options: chartOptions.pie
       },
-      options: chartOptions.pie
-    },
-    {
-      name: "managementPos",
-      selector: ".ct-chart3",
-      data: {
-        labels: chartOptions.labels.gender,
-        series: [132, 85, 8]
+      {
+        name: "managementPos",
+        selector: ".ct-chart3",
+        data: {
+          labels: chartOptions.labels.gender,
+          series: [132, 85, 8]
+        },
+        options: chartOptions.pie
       },
-      options: chartOptions.pie
-    }
-  ],
-  race: [
-    {
-      name: "techPos",
-      selector: ".ct-chart",
-      type: 'bar',
-      data: {
-        labels: chartOptions.labels.race,
-        series: [[50, 20, 23, 533, 9, 3, 11, 8]]
+    ],
+    race: [
+      {
+        name: "techPos",
+        selector: ".ct-chart",
+        type: 'bar',
+        data: {
+          labels: chartOptions.labels.race,
+          series: [[50, 20, 23, 533, 9, 3, 11, 8]]
+        },
+        options: chartOptions.bar
       },
-      options: chartOptions.bar
-    },
-    {
-      name: "nonTechPos",
-      selector: ".ct-chart1",
-      type: 'bar',
-      data: {
-        labels: chartOptions.labels.race,
-        series: [[47, 13, 35, 553, 12, 5, 8, 5]]
+      {
+        name: "nonTechPos",
+        selector: ".ct-chart1",
+        type: 'bar',
+        data: {
+          labels: chartOptions.labels.race,
+          series: [[47, 13, 35, 553, 12, 5, 8, 5]]
+        },
+        options: chartOptions.bar
       },
-      options: chartOptions.bar
-    },
-    {
-      name: "leaderPos",
-      selector: ".ct-chart2",
-      type: 'bar',
-      data: {
-        labels: chartOptions.labels.race,
-        series: [[18, 3, 5, 138, 7, 2, 3]]
+      {
+        name: "leaderPos",
+        selector: ".ct-chart2",
+        type: 'bar',
+        data: {
+          labels: chartOptions.labels.race,
+          series: [[18, 3, 5, 138, 7, 2, 3]]
+        },
+        options: chartOptions.bar
       },
-      options: chartOptions.bar
-    },
-    {
-      name: "managementPos",
-      selector: ".ct-chart3",
-      type: 'bar',
-      data: {
-        labels: chartOptions.labels.race,
-        series: [[19, 7, 12, 199, 3, 4, 4, 4]]
+      {
+        name: "managementPos",
+        selector: ".ct-chart3",
+        type: 'bar',
+        data: {
+          labels: chartOptions.labels.race,
+          series: [[19, 7, 12, 199, 3, 4, 4, 4]]
+        },
+        options: chartOptions.bar
+      }
+    ],
+    education: [
+      {
+        name: "techPos",
+        selector: ".ct-chart",
+        type: 'bar',
+        data: {
+          labels: chartOptions.labels.education,
+          series: [[2, 66, 19, 34, 377, 104]]
+        },
+        options: chartOptions.bar
       },
-      options: chartOptions.bar
-    }
-  ],
-  education: [
-    {
-      name: "techPos",
-      selector: ".ct-chart",
-      type: 'bar',
-      data: {
-        labels: chartOptions.labels.education,
-        series: [[2, 66, 19, 34, 377, 104]]
+      {
+        name: "nonTechPos",
+        selector: ".ct-chart1",
+        type: 'bar',
+        data: {
+          labels: chartOptions.labels.education,
+          series: [[1, 38, 3, 29, 450, 114]]
+        },
+        options: chartOptions.bar
       },
-      options: chartOptions.bar
-    },
-    {
-      name: "nonTechPos",
-      selector: ".ct-chart1",
-      type: 'bar',
-      data: {
-        labels: chartOptions.labels.education,
-        series: [[1, 38, 3, 29, 450, 114]]
+      {
+        name: "leaderPos",
+        selector: ".ct-chart2",
+        type: 'bar',
+        data: {
+          labels: chartOptions.labels.education,
+          series: [[1, 13, 3, 5, 100, 37]]
+        },
+        options: chartOptions.bar
       },
-      options: chartOptions.bar
-    },
-    {
-      name: "leaderPos",
-      selector: ".ct-chart2",
-      type: 'bar',
-      data: {
-        labels: chartOptions.labels.education,
-        series: [[1, 13, 3, 5, 100, 37]]
+      {
+        name: "managementPos",
+        selector: ".ct-chart3",
+        type: 'bar',
+        data: {
+          labels: chartOptions.labels.education,
+          series: [[0, 7, 1, 13, 145, 56]]
+        },
+        options: chartOptions.bar
+      }
+    ],
+    age: [
+      {
+        name: "techPos",
+        selector: ".ct-chart",
+        type: 'bar',
+        data: {
+          labels: chartOptions.labels.age,
+          series: [[36, 270, 206, 83, 9, 1]]
+        },
+        options: chartOptions.bar
       },
-      options: chartOptions.bar
-    },
-    {
-      name: "managementPos",
-      selector: ".ct-chart3",
-      type: 'bar',
-      data: {
-        labels: chartOptions.labels.education,
-        series: [[0, 7, 1, 13, 145, 56]]
+      {
+        name: "nonTechPos",
+        selector: ".ct-chart1",
+        type: 'bar',
+        data: {
+          labels: chartOptions.labels.age,
+          series: [[56, 325, 185, 64, 9, 0]]
+        },
+        options: chartOptions.bar
       },
-      options: chartOptions.bar
-    }
-  ],
-  age: [
-    {
-      name: "techPos",
-      selector: ".ct-chart",
-      type: 'bar',
-      data: {
-        labels: chartOptions.labels.age,
-        series: [[36, 270, 206, 83, 9, 1]]
+      {
+        name: "leaderPos",
+        selector: ".ct-chart2",
+        type: 'bar',
+        data: {
+          labels: chartOptions.labels.age,
+          series: [[1, 35, 92, 28, 4, 0]]
+        },
+        options: chartOptions.bar
       },
-      options: chartOptions.bar
-    },
-    {
-      name: "nonTechPos",
-      selector: ".ct-chart1",
-      type: 'bar',
-      data: {
-        labels: chartOptions.labels.age,
-        series: [[56, 325, 185, 64, 9, 0]]
-      },
-      options: chartOptions.bar
-    },
-    {
-      name: "leaderPos",
-      selector: ".ct-chart2",
-      type: 'bar',
-      data: {
-        labels: chartOptions.labels.age,
-        series: [[1, 35, 92, 28, 4, 0]]
-      },
-      options: chartOptions.bar
-    },
-    {
-      name: "managementPos",
-      selector: ".ct-chart3",
-      type: 'bar',
-      data: {
-        labels: chartOptions.labels.age,
-        series: [[2, 93, 88, 36, 4, 1]]
-      },
-      options: chartOptions.bar
-    }
-  ]
+      {
+        name: "managementPos",
+        selector: ".ct-chart3",
+        type: 'bar',
+        data: {
+          labels: chartOptions.labels.age,
+          series: [[2, 93, 88, 36, 4, 1]]
+        },
+        options: chartOptions.bar
+      }
+    ]
+  },
+  workforce: {
+    race: [
+      {
+        name: "workforceRace",
+        selector: ".workforce-chart",
+        type: 'bar',
+        data: {
+          labels: chartOptions.labels.workforce,
+          series: [
+            [86, 84, 81, 83],
+            [14, 16, 19, 17]
+          ],
+        },
+        options: {
+          seriesBarDistance: 10,
+          axisX: {
+            offset: 60
+          },
+          axisY: {
+            offset: 80,
+            labelInterpolationFnc: function(value) {
+              return value + ' %';
+            },
+            scaleMinSpace: 15
+          }
+        }
+      }
+    ],
+    gender: [
+      {
+        name: "workforceGender",
+        selector: ".workforce-chart",
+        type: 'bar',
+        data: {
+          labels: chartOptions.labels.workforce,
+          series: [
+            [60, 67, 52, 48],
+            [38, 33, 48, 51]
+          ],
+        },
+        options: {
+          seriesBarDistance: 10,
+          axisX: {
+            offset: 60
+          },
+          axisY: {
+            offset: 80,
+            labelInterpolationFnc: function(value) {
+              return value + ' %';
+            },
+            scaleMinSpace: 15
+          }
+        }
+      }
+    ]
+  }
 };

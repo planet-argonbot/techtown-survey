@@ -5,33 +5,45 @@ var Survey = (function() {
     init: function() {
       var self = this;
 
-
-      this.buildCharts(chartsData.gender);
+      this.buildCharts("gender");
     },
 
-    buildCharts: function(selectedCharts) {
-      $.each(selectedCharts, function(index, value) {
-        if (chartsData[value.name] !== undefined) {
-          chartsData[value.name].detach();
-          // clearing html
-          $(value.selector).html('');
+    buildCharts: function(selectedCharts, chartSection) {
+      var self = this;
+      var charts;
+      if (chartSection) {
+        charts = selectedCharts;
+      } else {
+        // this only happens upon init build
+        charts = [];
+        for (var selector in chartsData) {
+          chartsData[selector][selectedCharts].map(function(chart) {
+            charts.push(chart);
+          });
         }
-        if (value.type === 'bar') {
-          chartsData[value.name] = new Chartist.Bar(value.selector, value.data);
+      }
+      $.each(charts, function(index, chart) {
+        if (chartsData[chart.name] !== undefined) {
+          chartsData[chart.name].detach();
+          // clearing html
+          $(chart.selector).html('');
+        }
+        if (chart.type === 'bar') {
+          chartsData[chart.name] = new Chartist.Bar(chart.selector, chart.data);
         } else {
-          chartsData[value.name] = new Chartist.Pie(value.selector, value.data, value.options.options, value.options.responsiveOptions);
+          chartsData[chart.name] = new Chartist.Pie(chart.selector, chart.data, chart.options.options, chart.options.responsiveOptions);
         }
         // running the chartsDone event after last chart is created
-        chartsData[value.name].on('created', function(e) {
-          if (index === selectedCharts.length - 1) {
+        chartsData[chart.name].on('created', function(e) {
+          if (index === charts.length - 1) {
             document.dispatchEvent(chartsDone);
           }
         });
       });
     },
 
-    updateCharts: function(filter) {
-      this.buildCharts(chartsData[filter]);
+    updateCharts: function(filter, chartSection) {
+      this.buildCharts(chartsData[chartSection][filter], chartSection);
     },
   };
 
