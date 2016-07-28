@@ -6,6 +6,13 @@
       // labelInterpolationFnc: function(value) {
       //   return value[0];
       // }
+      plugins: [
+        Chartist.plugins.tooltip({
+          transformTooltipTextFnc: function(value) {
+            return value + '%';
+          }
+        })
+      ]
     },
     responsiveOptions: [
       ['screen and (min-width: 640px)', {
@@ -25,7 +32,9 @@
   bar: {
     plugins: [
       Chartist.plugins.tooltip({
-        currency: '$'
+        transformTooltipTextFnc: function(value) {
+          return value + '%';
+        }
       })
     ]
   },
@@ -230,7 +239,14 @@
               return value + ' %';
             },
             scaleMinSpace: 15
-          }
+          },
+          plugins: [
+            Chartist.plugins.tooltip({
+              transformTooltipTextFnc: function(value) {
+                return value + '%';
+              }
+            })
+          ]
         }
       }
     ],
@@ -257,7 +273,14 @@
               return value + ' %';
             },
             scaleMinSpace: 15
-          }
+          },
+          plugins: [
+            Chartist.plugins.tooltip({
+              transformTooltipTextFnc: function(value) {
+                return value + '%';
+              }
+            })
+          ]
         }
       }
     ]

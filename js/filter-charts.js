@@ -29,7 +29,7 @@ var Survey = (function() {
           $(chart.selector).html('');
         }
         if (chart.type === 'bar') {
-          chartsData[chart.name] = new Chartist.Bar(chart.selector, chart.data);
+          chartsData[chart.name] = new Chartist.Bar(chart.selector, chart.data, chart.options);
         } else {
           chartsData[chart.name] = new Chartist.Pie(chart.selector, chart.data, chart.options.options, chart.options.responsiveOptions);
         }
