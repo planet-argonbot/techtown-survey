@@ -1,11 +1,18 @@
 var Survey = (function() {
+  // creates an event and initializes
+  // does not trigger here
   var chartsDone = document.createEvent('Event');
   chartsDone.initEvent('charts-done', true, true);
+
   var build = {
     init: function() {
       var self = this;
 
       this.buildCharts("gender");
+    },
+
+    updateCharts: function(filter, chartSection) {
+      this.buildCharts(chartsData[chartSection][filter], chartSection);
     },
 
     buildCharts: function(selectedCharts, chartSection) {
@@ -29,6 +36,7 @@ var Survey = (function() {
           // clearing html
           $(chart.selector).html('');
         }
+        // rewrites values as percentages
         if (chart.percentage === true) {
           var selectedSeries;
 
@@ -52,17 +60,25 @@ var Survey = (function() {
             chart.data.series = seriesArray;
           }
         }
+
         if (chart.type === 'bar') {
           chartsData[chart.name] = new Chartist.Bar(chart.selector, chart.data, chart.options);
         } else {
           chartsData[chart.name] = new Chartist.Pie(chart.selector, chart.data, chart.options.options, chart.options.responsiveOptions);
         }
+
         // running the chartsDone event after last chart is created
         chartsData[chart.name].on('created', function(e) {
           if (index === charts.length - 1) {
             document.dispatchEvent(chartsDone);
           }
         });
+
+        if (chart.type !== 'bar') {
+          chartsData[chart.name].on('draw', function(data) {
+            self.animatePie(data);
+          });
+        }
       });
     },
 
@@ -70,8 +86,43 @@ var Survey = (function() {
       return num1 + num2;
     },
 
-    updateCharts: function(filter, chartSection) {
-      this.buildCharts(chartsData[chartSection][filter], chartSection);
+    animatePie: function(data) {
+      if(data.type === 'slice') {
+        // Get the total path length in order to use for dash array animation
+        var pathLength = data.element._node.getTotalLength();
+
+        // Set a dasharray that matches the path length as prerequisite to animate dashoffset
+        data.element.attr({
+          'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+        });
+
+        // Create animation definition while also assigning an ID to the animation for later sync usage
+        var animationDefinition = {
+          'stroke-dashoffset': {
+            id: 'anim' + data.index,
+            dur: 400,
+            from: -pathLength + 'px',
+            to:  '0px',
+            easing: Chartist.Svg.Easing.easeOutQuint,
+            // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
+            fill: 'freeze'
+          }
+        };
+
+        // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
+        if (data.index !== 0) {
+          animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+        }
+
+        // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
+        data.element.attr({
+          'stroke-dashoffset': -pathLength + 'px'
+        });
+
+        // We can't use guided mode as the animations need to rely on setting begin manually
+        // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
+        data.element.animate(animationDefinition, false);
+      }
     },
   };
 
