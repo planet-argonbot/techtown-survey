@@ -162,6 +162,13 @@ svg:not(:root) {
 .ct-grid {
   display: none;
 }
+.chartist-tooltip {
+  background: $dark-gray;
+  color: $white;
+  &:before {
+    border-top-color: $dark-gray;
+  }
+}
 // .ct-bar {
 //   stroke-width: 50px;
 // }
