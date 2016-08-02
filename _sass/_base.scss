@@ -209,6 +209,16 @@ svg:not(:root) {
   }
 }
 
+.animated-slice {
+    animation: dash 1s linear forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 @-webkit-keyframes slideCharts {
   0% {
     transform: scaleY(0);
