@@ -105,13 +105,10 @@ svg:not(:root) {
   }
 }
 .diversity-headline {
-  h2 {
-    position: absolute;
-  }
-}
-.diversity-headline--text {
-  top: 50%;
-  margin-top: -20px;
+  background: url('/images/portland-waterfront.jpg');
+  background-size: cover;
+  min-height: 300px;
+  padding: 120px 0px 0px;
 }
 .quote {
   position: relative;
