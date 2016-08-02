@@ -147,6 +147,31 @@ svg:not(:root) {
   background-size: cover;
   background-repeat: none;
 }
+.chart-key {
+  li {
+    display: inline-block;
+    position: relative;
+    padding-left: 17px;
+    margin: 0 5px;
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 14px;
+    &:before {
+      content: "";
+      width:13px;
+      height: 13px;
+      background-color: $aqua;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-top: -6px;
+    }
+    &:nth-child(2) {
+      &:before {
+        background-color: $lime;
+      }
+    }
+  }
+}
 // ==============
 // Chart styles
 // ==============

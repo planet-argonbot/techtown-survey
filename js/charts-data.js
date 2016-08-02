@@ -16,8 +16,7 @@
     },
     responsiveOptions: [
       ['screen and (min-width: 640px)', {
-        chartPadding: 30,
-        labelOffset: 100,
+        labelOffset: 20,
         labelDirection: 'explode',
         labelInterpolationFnc: function(value) {
           return value;
