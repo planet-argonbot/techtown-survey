@@ -29,17 +29,29 @@
     ]
   },
   bar: {
-    axisY: {
-            labelInterpolationFnc: function(value) {
-              return value + ' %';
-            },
-          },
-    plugins: [
-      Chartist.plugins.tooltip({
-        transformTooltipTextFnc: function(value) {
-          return value + '%';
+    options: {
+      axisY: {
+        labelInterpolationFnc: function(value) {
+          return value + ' %';
+        },
+      },
+      plugins: [
+        Chartist.plugins.tooltip({
+          transformTooltipTextFnc: function(value) {
+            return value + '%';
+          }
+        })
+      ]
+    },
+    responsiveOptions: [
+      ['screen and (max-width: 640px)', {
+        seriesBarDistance: 30,
+        axisX: {
+          labelInterpolationFnc: function(value) {
+            return value.slice(0,5);
+          }
         }
-      })
+      }]
     ]
   },
   // collection of labels here for less typos
@@ -253,23 +265,35 @@
           ],
         },
         options: {
-          seriesBarDistance: 20,
-          axisX: {
-            offset: 60
-          },
-          axisY: {
-            offset: 80,
-            labelInterpolationFnc: function(value) {
-              return value + ' %';
+          options: {
+            seriesBarDistance: 20,
+            axisX: {
+              offset: 60
             },
-            scaleMinSpace: 15
+            axisY: {
+              offset: 80,
+              labelInterpolationFnc: function(value) {
+                return value + ' %';
+              },
+              scaleMinSpace: 15
+            },
+            plugins: [
+              Chartist.plugins.tooltip({
+                transformTooltipTextFnc: function(value) {
+                  return value + '%';
+                }
+              })
+            ]
           },
-          plugins: [
-            Chartist.plugins.tooltip({
-              transformTooltipTextFnc: function(value) {
-                return value + '%';
+          responsiveOptions: [
+            ['screen and (max-width: 640px)', {
+              seriesBarDistance: 5,
+              axisX: {
+                labelInterpolationFnc: function(value) {
+                  return value.slice(0,5);
+                }
               }
-            })
+            }]
           ]
         }
       }
@@ -287,23 +311,35 @@
           ],
         },
         options: {
-          seriesBarDistance: 20,
-          axisX: {
-            offset: 60
-          },
-          axisY: {
-            offset: 80,
-            labelInterpolationFnc: function(value) {
-              return value + ' %';
+          options: {
+            seriesBarDistance: 20,
+            axisX: {
+              offset: 60
             },
-            scaleMinSpace: 15
+            axisY: {
+              offset: 80,
+              labelInterpolationFnc: function(value) {
+                return value + ' %';
+              },
+              scaleMinSpace: 15
+            },
+            plugins: [
+              Chartist.plugins.tooltip({
+                transformTooltipTextFnc: function(value) {
+                  return value + '%';
+                }
+              })
+            ]
           },
-          plugins: [
-            Chartist.plugins.tooltip({
-              transformTooltipTextFnc: function(value) {
-                return value + '%';
+          responsiveOptions: [
+            ['screen and (max-width: 640px)', {
+              seriesBarDistance: 5,
+              axisX: {
+                labelInterpolationFnc: function(value) {
+                  return value.slice(0,5);
+                }
               }
-            })
+            }]
           ]
         }
       }
