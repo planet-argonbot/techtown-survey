@@ -48,7 +48,7 @@
         seriesBarDistance: 30,
         axisX: {
           labelInterpolationFnc: function(value) {
-            return value.slice(0,5);
+            return value.slice(0,5) + '...';
           }
         }
       }]
@@ -287,10 +287,10 @@
           },
           responsiveOptions: [
             ['screen and (max-width: 640px)', {
-              seriesBarDistance: 5,
+              seriesBarDistance: 12,
               axisX: {
                 labelInterpolationFnc: function(value) {
-                  return value.slice(0,5);
+                  return value.slice(0,5) + '...';
                 }
               }
             }]
@@ -333,10 +333,10 @@
           },
           responsiveOptions: [
             ['screen and (max-width: 640px)', {
-              seriesBarDistance: 5,
+              seriesBarDistance: 12,
               axisX: {
                 labelInterpolationFnc: function(value) {
-                  return value.slice(0,5);
+                  return value.slice(0,5) + '...';
                 }
               }
             }]

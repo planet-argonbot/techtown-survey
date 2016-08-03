@@ -198,6 +198,9 @@ svg:not(:root) {
     border-top-color: $dark-gray;
   }
 }
+.chartist-tooltip-meta {
+  font-size: 12px;
+}
 .ct-bar {
   stroke-width: 20px;
   -webkit-animation:slideCharts 0.5s 1 alternate;
