@@ -54,6 +54,38 @@
       }]
     ]
   },
+  workforce: {
+    options: {
+      seriesBarDistance: 20,
+      axisX: {
+        offset: 60
+      },
+      axisY: {
+        offset: 80,
+        labelInterpolationFnc: function(value) {
+          return value + ' %';
+        },
+        scaleMinSpace: 15
+      },
+      plugins: [
+        Chartist.plugins.tooltip({
+          transformTooltipTextFnc: function(value) {
+            return value + '%';
+          }
+        })
+      ]
+    },
+    responsiveOptions: [
+      ['screen and (max-width: 640px)', {
+        seriesBarDistance: 12,
+        axisX: {
+          labelInterpolationFnc: function(value) {
+            return value.slice(0,5) + '...';
+          }
+        }
+      }]
+    ]
+  },
   // collection of labels here for less typos
   labels: {
     gender: ['Male', 'Female', 'Non-Conforming'],
@@ -264,38 +296,7 @@
             [14, 16, 19, 17]
           ],
         },
-        options: {
-          options: {
-            seriesBarDistance: 20,
-            axisX: {
-              offset: 60
-            },
-            axisY: {
-              offset: 80,
-              labelInterpolationFnc: function(value) {
-                return value + ' %';
-              },
-              scaleMinSpace: 15
-            },
-            plugins: [
-              Chartist.plugins.tooltip({
-                transformTooltipTextFnc: function(value) {
-                  return value + '%';
-                }
-              })
-            ]
-          },
-          responsiveOptions: [
-            ['screen and (max-width: 640px)', {
-              seriesBarDistance: 12,
-              axisX: {
-                labelInterpolationFnc: function(value) {
-                  return value.slice(0,5) + '...';
-                }
-              }
-            }]
-          ]
-        }
+        options: chartOptions.workforce
       }
     ],
     gender: [
@@ -310,38 +311,7 @@
             [38, 33, 48, 51]
           ],
         },
-        options: {
-          options: {
-            seriesBarDistance: 20,
-            axisX: {
-              offset: 60
-            },
-            axisY: {
-              offset: 80,
-              labelInterpolationFnc: function(value) {
-                return value + ' %';
-              },
-              scaleMinSpace: 15
-            },
-            plugins: [
-              Chartist.plugins.tooltip({
-                transformTooltipTextFnc: function(value) {
-                  return value + '%';
-                }
-              })
-            ]
-          },
-          responsiveOptions: [
-            ['screen and (max-width: 640px)', {
-              seriesBarDistance: 12,
-              axisX: {
-                labelInterpolationFnc: function(value) {
-                  return value.slice(0,5) + '...';
-                }
-              }
-            }]
-          ]
-        }
+        options: chartOptions.workforce
       }
     ]
   }
