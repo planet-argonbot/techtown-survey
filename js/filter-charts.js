@@ -36,67 +36,72 @@ var Survey = (function() {
           // clearing html
           $(chart.selector).html('');
         }
-        // rewrites values as percentages
-        if (chart.percentage === true) {
-          var selectedSeries;
 
-          if (chart.type === 'bar') {
-            selectedSeries = chart.data.series[0];
-          } else {
-            selectedSeries = chart.data.series;
+        // don't alter series if has happened once on the page already
+        if (!chart.calculated) {
+          // rewrites values as percentages
+          if (chart.percentage === true) {
+            var selectedSeries;
+
+            if (chart.type === 'bar') {
+              selectedSeries = chart.data.series[0];
+            } else {
+              selectedSeries = chart.data.series;
+            }
+            var seriesArray = [];
+            var total = selectedSeries.reduce(self.add, 0);
+
+            // creates percentage based on value and total values
+            for (var i in selectedSeries) {
+              seriesArray.push(Math.round(selectedSeries[i] / total * 100));
+            }
+            // reassigns series
+            if (chart.type === 'bar') {
+              chart.data.series = [seriesArray];
+            } else {
+              chart.data.series = seriesArray;
+            }
           }
 
-          var seriesArray = [];
-          var total = selectedSeries.reduce(self.add, 0);
-
-          // creates percentage based on value and total values
-          for (var i in selectedSeries) {
-            seriesArray.push(Math.round(selectedSeries[i] / total * 100));
-          }
-          // reassigns series
-          if (chart.type === 'bar') {
-            chart.data.series = [seriesArray];
-          } else {
-            chart.data.series = seriesArray;
-          }
-        }
-
-        // adding meta information for tooltips to have labels
-        var assignMeta = function(series, multi) {
-          // for multi bar charts this gets a little more complex
-          if (multi) {
-            var seriesArr = [];
-            series.forEach(function(value, index) {
-              var valueArr = [];
-              value.forEach(function(val, i) {
-                valueArr.push({meta: chart.data.labels[i], value: val});
+          // adding meta information for tooltips to have labels
+          var assignMeta = function(series, multi) {
+            // for multi bar charts this gets a little more complex
+            if (multi) {
+              var seriesArr = [];
+              series.forEach(function(value, index) {
+                var valueArr = [];
+                value.forEach(function(val, i) {
+                  valueArr.push({meta: chart.data.labels[i], value: val});
+                });
+                seriesArr.push(valueArr);
               });
-              seriesArr.push(valueArr);
-            });
-            seriesWithLabel = seriesArr;
-          } else {
-            series.forEach(function(value, index) {
-              seriesWithLabel.push({meta: chart.data.labels[index], value: value});
-            })
+              seriesWithLabel = seriesArr;
+            } else {
+              series.forEach(function(value, index) {
+                seriesWithLabel.push({meta: chart.data.labels[index], value: value});
+              })
+            }
           }
-        }
 
-        var seriesWithLabel = [];
-        var series;
-        if (chart.data.series.length > 1) {
-          series = chart.data.series;
-          // if a multi bar chart
-          if (Array.isArray(chart.data.series[0])) {
-            assignMeta(series, true);
+          var seriesWithLabel = [];
+          var series;
+          if (chart.data.series.length > 1) {
+            series = chart.data.series;
+            // if a multi bar chart
+            if (Array.isArray(chart.data.series[0])) {
+              assignMeta(series, true);
+            } else {
+              assignMeta(series);
+            }
+            chart.data.series = seriesWithLabel;
           } else {
+            series = chart.data.series[0];
             assignMeta(series);
+            chart.data.series = [seriesWithLabel];
           }
-          chart.data.series = seriesWithLabel;
-        } else {
-          series = chart.data.series[0];
-          assignMeta(series);
-          chart.data.series = [seriesWithLabel];
         }
+        // this signifies that a chart should not be run through altering data.series
+        chart.calculated = true;
 
         if (chart.type === 'bar') {
           chartsData[chart.name] = new Chartist.Bar(chart.selector, chart.data, chart.options.options, chart.options.responsiveOptions);
