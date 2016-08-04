@@ -49,6 +49,7 @@ var Survey = (function() {
               selectedSeries = chart.data.series;
             }
             var seriesArray = [];
+            // adds all integers in the array
             var total = selectedSeries.reduce(self.add, 0);
 
             // creates percentage based on value and total values
@@ -56,6 +57,7 @@ var Survey = (function() {
               seriesArray.push(Math.round(selectedSeries[i] / total * 100));
             }
             // reassigns series
+            // bar graph series are expecting to be wrapped in an additional array
             if (chart.type === 'bar') {
               chart.data.series = [seriesArray];
             } else {
@@ -101,6 +103,7 @@ var Survey = (function() {
           }
         }
         // this signifies that a chart should not be run through altering data.series
+        // data.series is only altered once for each chart this way
         chart.calculated = true;
 
         if (chart.type === 'bar') {
