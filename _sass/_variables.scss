@@ -21,6 +21,14 @@ $green: #9DE0AD;
 $roboto: 'Roboto', sans-serif;
 $varela: 'Varela Round', sans-serif;
 
+.varela {
+  font-family: $varela;
+}
+
+.roboto {
+  font-family: $roboto;
+}
+
 // =======================
 // Breakpoints
 // =======================
