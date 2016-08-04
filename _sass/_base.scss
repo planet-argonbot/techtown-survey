@@ -202,6 +202,12 @@ svg:not(:root) {
 .ct-series-c .ct-point, .ct-series-c .ct-line, .ct-series-c .ct-bar, .ct-series-c .ct-slice-donut {
   stroke: $green;
 }
+.ct-chart-bar .ct-label.ct-horizontal.ct-end, .ct-label {
+  font-size: 13px;
+  @media only screen and (max-width: $sm-breakpoint) {
+    font-size: 12px;
+  }
+}
 .ct-grid {
   display: none;
 }
