@@ -98,10 +98,24 @@ svg:not(:root) {
     text-transform: uppercase;
     color: $black;
   }
+  img {
+    max-width: 350px;
+    @media only screen and (max-width: $sm-breakpoint) {
+      max-width: none;
+      width: 100%;
+    }
+  }
   .btn {
     color: $white;
     padding: 8px 15px;
     border-radius: 0px;
+  }
+  @media only screen and (max-width: $md-breakpoint) {
+    .btn {
+      background-color: transparent;
+      color: $black;
+      padding: 0;
+    }
   }
 }
 .diversity-headline {
@@ -109,7 +123,7 @@ svg:not(:root) {
   background-size: cover;
   min-height: 300px;
   padding: 120px 0px 0px;
-  @media only screen and (max-width: 544px) {
+  @media only screen and (max-width: $sm-breakpoint) {
     padding: 20px 0;
     min-height: inherit;
     h1 {
@@ -207,7 +221,7 @@ svg:not(:root) {
   animation:slideCharts 0.5s 1 alternate;
   transform-origin: 0% 77%;
   -webkit-transform-origin: 0% 100%;
-  @media only screen and (max-width: 544px) {
+  @media only screen and (max-width: $sm-breakpoint) {
     stroke-width: 12px;
   }
 }
