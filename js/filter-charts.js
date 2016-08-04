@@ -79,9 +79,9 @@ var Survey = (function() {
             } else {
               series.forEach(function(value, index) {
                 seriesWithLabel.push({meta: chart.data.labels[index], value: value});
-              })
+              });
             }
-          }
+          };
 
           var seriesWithLabel = [];
           var series;
@@ -116,7 +116,7 @@ var Survey = (function() {
           }
         });
 
-        if (chart.type !== 'bar') {
+        if (chart.type === 'pie') {
           chartsData[chart.name].on('draw', function(data) {
             self.animatePie(data);
           });
