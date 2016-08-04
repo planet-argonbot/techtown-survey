@@ -68,6 +68,7 @@ var Survey = (function() {
           // adding meta information for tooltips to have labels
           var assignMeta = function(series, multi) {
             // for multi bar charts this gets a little more complex
+            // this reconstructs the array with meta info
             if (multi) {
               var seriesArr = [];
               series.forEach(function(value, index) {
