@@ -254,3 +254,9 @@ svg:not(:root) {
     -webkit-transform: scaleY(1);
   }
 }
+
+.footer__text {
+  @media only screen and (min-width: $lg-breakpoint) {
+    margin-top: 10px;
+  }
+}
