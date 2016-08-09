@@ -252,6 +252,11 @@ $xxl-margin:   60px;
 .margin-top-lg      { margin-top: $lg-margin          }
 .margin-top-xl      { margin-top: $xl-margin          }
 .margin-top-xxl     { margin-top: $xxl-margin         }
+@media only screen and (max-width: $sm-breakpoint)    {
+  .small-margin-top-0 {
+    margin-top: 0;
+  }
+}
 
 .margin-right-0     { margin-right: 0                 }
 .margin-right-xxs   { margin-right: $xxs-margin       }

@@ -15,7 +15,7 @@
       ]
     },
     responsiveOptions: [
-      ['screen and (min-width: 640px)', {
+      ['screen and (min-width: 544px)', {
         labelOffset: 20,
         labelDirection: 'explode',
         labelInterpolationFnc: function(value) {
@@ -44,12 +44,17 @@
       ]
     },
     responsiveOptions: [
-      ['screen and (max-width: 640px)', {
-        seriesBarDistance: 30,
-        axisX: {
+      ['screen and (max-width: 544px)', {
+        seriesBarDistance: 10,
+        fullWidth: true,
+        height: '500px',
+        reverseData: true,
+        horizontalBars: true,
+        axisY: {
           labelInterpolationFnc: function(value) {
-            return value.slice(0,5) + '...';
-          }
+            return value;
+          },
+          offset: 70
         }
       }]
     ]
@@ -76,12 +81,17 @@
       ]
     },
     responsiveOptions: [
-      ['screen and (max-width: 640px)', {
-        seriesBarDistance: 12,
-        axisX: {
+      ['screen and (max-width: 544px)', {
+        seriesBarDistance: 25,
+        fullWidth: true,
+        height: '500px',
+        reverseData: true,
+        horizontalBars: true,
+        axisY: {
           labelInterpolationFnc: function(value) {
-            return value.slice(0,5) + '...';
-          }
+            return value;
+          },
+          offset: 70
         }
       }]
     ]

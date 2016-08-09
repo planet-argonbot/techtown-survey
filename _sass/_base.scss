@@ -225,7 +225,9 @@ svg:not(:root) {
   transform-origin: 0% 77%;
   -webkit-transform-origin: 0% 100%;
   @media only screen and (max-width: $sm-breakpoint) {
-    stroke-width: 12px;
+    stroke-width: 25px;
+    -webkit-animation:slideChartsHorizontal 0.5s 1 alternate;
+    animation:slideChartsHorizontal 0.5s 1 alternate;
   }
 }
 
@@ -252,6 +254,32 @@ svg:not(:root) {
     transform: scaleY(1);
     -ms-transform: scaleY(1);
     -webkit-transform: scaleY(1);
+  }
+}
+
+@-webkit-keyframes slideChartsHorizontal {
+  0% {
+    transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -webkit-transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+  }
+}
+
+@keyframes slideChartsHorizontal {
+  0% {
+    transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -webkit-transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -webkit-transform: scaleX(1);
   }
 }
 
