@@ -97,7 +97,7 @@
     race: ['Asian', 'Black', 'Hispanic', 'White', 'American Indian', 'Pacific Islander', 'Slavic', 'Middle Eastern'],
     education: ['Less Than High School', 'High School', 'Code School', 'Associate', 'Bachelor', 'Graduate'],
     age: ['18-24', '25-34', '35-44', '45-54', '55-64', '65+'],
-    workforce: ['Survey results', 'Software/tech', 'All Industries', 'General Population']
+    workforce: ['Survey results', 'Software/Tech', 'All Industries', 'General Population']
   }
 };
 
