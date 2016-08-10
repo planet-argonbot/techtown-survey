@@ -3,7 +3,9 @@
     options: {
       donut: true,
       donutWidth: 20,
-      labelInterpolationFnc: function(value) {
+      labelOffset: 20,
+      chartPadding: 0,
+      labelInterpolationFnc: function(value, index) {
         return value;
       },
       plugins: [
@@ -17,14 +19,7 @@
     responsiveOptions: [
       ['screen and (min-width: 544px)', {
         labelOffset: 20,
-        labelDirection: 'explode',
-        labelInterpolationFnc: function(value) {
-          return value;
-        }
-      }],
-      ['screen and (min-width: 1024px)', {
-        labelOffset: 20,
-        chartPadding: 0
+        labelDirection: 'explode'
       }]
     ]
   },
