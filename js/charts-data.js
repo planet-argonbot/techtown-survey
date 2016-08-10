@@ -80,7 +80,7 @@
         seriesBarDistance: 25,
         fullWidth: true,
         height: '500px',
-        reverseData: true,
+        reverseData: false,
         horizontalBars: true,
         axisY: {
           labelInterpolationFnc: function(value) {
