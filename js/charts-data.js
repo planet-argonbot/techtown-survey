@@ -1,4 +1,8 @@
  var chartOptions = {
+  techTotal: 617,
+  nonTechTotal: 645,
+  leaderTotal: 161,
+  manageTotal: 225,
   pie: {
     options: {
       donut: true,
@@ -108,6 +112,7 @@
         name: "techPos",
         selector: ".ct-chart",
         type: "pie",
+        optTotal: chartOptions.techTotal,
         percentage: true,
         data: {
           labels: chartOptions.labels.gender,
@@ -119,10 +124,11 @@
         name: "nonTechPos",
         selector: ".ct-chart1",
         type: "pie",
+        optTotal: chartOptions.NonTechTotal,
         percentage: true,
         data: {
           labels: chartOptions.labels.gender,
-          series: [346, 285, 14]
+          series: [285, 346, 14]
         },
         options: chartOptions.pie
       },
@@ -130,6 +136,7 @@
         name: "leaderPos",
         selector: ".ct-chart2",
         type: "pie",
+        optTotal: chartOptions.leaderTotal,
         percentage: true,
         data: {
           labels: chartOptions.labels.gender,
@@ -141,6 +148,7 @@
         name: "managementPos",
         selector: ".ct-chart3",
         type: "pie",
+        optTotal: chartOptions.manageTotal,
         percentage: true,
         data: {
           labels: chartOptions.labels.gender,
@@ -153,6 +161,7 @@
       {
         name: "techPos",
         selector: ".ct-chart",
+        optTotal: chartOptions.techTotal,
         percentage: true,
         type: 'bar',
         data: {
@@ -164,6 +173,7 @@
       {
         name: "nonTechPos",
         selector: ".ct-chart1",
+        optTotal: chartOptions.nonTechTotal,
         percentage: true,
         type: 'bar',
         data: {
@@ -175,6 +185,7 @@
       {
         name: "leaderPos",
         selector: ".ct-chart2",
+        optTotal: chartOptions.leaderTotal,
         percentage: true,
         type: 'bar',
         data: {
@@ -186,6 +197,7 @@
       {
         name: "managementPos",
         selector: ".ct-chart3",
+        optTotal: chartOptions.manageTotal,
         percentage: true,
         type: 'bar',
         data: {
@@ -199,6 +211,7 @@
       {
         name: "techPos",
         selector: ".ct-chart",
+        optTotal: chartOptions.techTotal,
         percentage: true,
         type: 'bar',
         data: {
@@ -210,8 +223,8 @@
       {
         name: "nonTechPos",
         selector: ".ct-chart1",
+        optTotal: chartOptions.nonTechTotal,
         percentage: true,
-        optTotal: 645,
         type: 'bar',
         data: {
           labels: chartOptions.labels.education,
@@ -222,6 +235,7 @@
       {
         name: "leaderPos",
         selector: ".ct-chart2",
+        optTotal: chartOptions.leaderTotal,
         percentage: true,
         type: 'bar',
         data: {
@@ -233,6 +247,7 @@
       {
         name: "managementPos",
         selector: ".ct-chart3",
+        optTotal: chartOptions.manageTotal,
         percentage: true,
         type: 'bar',
         data: {
@@ -246,6 +261,7 @@
       {
         name: "techPos",
         selector: ".ct-chart",
+        optTotal: chartOptions.techTotal,
         percentage: true,
         type: 'bar',
         data: {
@@ -257,6 +273,7 @@
       {
         name: "nonTechPos",
         selector: ".ct-chart1",
+        optTotal: chartOptions.nonTechTotal,
         percentage: true,
         type: 'bar',
         data: {
@@ -268,6 +285,7 @@
       {
         name: "leaderPos",
         selector: ".ct-chart2",
+        optTotal: chartOptions.leaderTotal,
         percentage: true,
         type: 'bar',
         data: {
@@ -279,6 +297,7 @@
       {
         name: "managementPos",
         selector: ".ct-chart3",
+        optTotal: chartOptions.manageTotal,
         percentage: true,
         type: 'bar',
         data: {
