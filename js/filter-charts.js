@@ -54,7 +54,6 @@ var Survey = (function() {
             if (!chart.optTotal) {
               total = selectedSeries.reduce(self.add, 0);
             } else {
-              debugger;
               total = chart.optTotal;
             }
 

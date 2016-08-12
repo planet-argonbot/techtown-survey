@@ -190,7 +190,7 @@
         type: 'bar',
         data: {
           labels: chartOptions.labels.race,
-          series: [[18, 3, 5, 138, 7, 2, 3]]
+          series: [[18, 3, 5, 138, 8, 2, 4, 3]]
         },
         options: chartOptions.bar
       },
