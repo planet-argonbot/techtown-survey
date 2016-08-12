@@ -211,10 +211,11 @@
         name: "nonTechPos",
         selector: ".ct-chart1",
         percentage: true,
+        optTotal: 645,
         type: 'bar',
         data: {
           labels: chartOptions.labels.education,
-          series: [[1, 38, 3, 29, 450, 114]]
+          series: [[0, 38, 3, 29, 450, 114]]
         },
         options: chartOptions.bar
       },

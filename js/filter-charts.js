@@ -50,7 +50,13 @@ var Survey = (function() {
             }
             var seriesArray = [];
             // adds all integers in the array
-            var total = selectedSeries.reduce(self.add, 0);
+            var total;
+            if (!chart.optTotal) {
+              total = selectedSeries.reduce(self.add, 0);
+            } else {
+              debugger;
+              total = chart.optTotal;
+            }
 
             // creates percentage based on value and total values
             for (var i in selectedSeries) {
