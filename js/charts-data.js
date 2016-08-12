@@ -1,8 +1,8 @@
  var chartOptions = {
   techTotal: 617,
   nonTechTotal: 645,
-  leaderTotal: 161,
-  manageTotal: 225,
+  leaderTotal: 337,
+  overallTotal: 1270,
   pie: {
     options: {
       donut: true,
@@ -140,19 +140,19 @@
         percentage: true,
         data: {
           labels: chartOptions.labels.gender,
-          series: [102, 56, 3]
+          series: [205, 122, 10]
         },
         options: chartOptions.pie
       },
       {
-        name: "managementPos",
+        name: "overall",
         selector: ".ct-chart3",
         type: "pie",
-        optTotal: chartOptions.manageTotal,
+        optTotal: chartOptions.overallTotal,
         percentage: true,
         data: {
           labels: chartOptions.labels.gender,
-          series: [132, 85, 8]
+          series: [758, 479, 33]
         },
         options: chartOptions.pie
       },
@@ -190,19 +190,19 @@
         type: 'bar',
         data: {
           labels: chartOptions.labels.race,
-          series: [[18, 3, 5, 138, 8, 2, 4, 3]]
+          series: [[30, 9, 16, 295, 10, 5, 6, 6]]
         },
         options: chartOptions.bar
       },
       {
-        name: "managementPos",
+        name: "overall",
         selector: ".ct-chart3",
-        optTotal: chartOptions.manageTotal,
+        optTotal: chartOptions.overallTotal,
         percentage: true,
         type: 'bar',
         data: {
           labels: chartOptions.labels.race,
-          series: [[19, 7, 12, 199, 3, 4, 4, 4]]
+          series: [[98, 33, 58, 1094, 21, 8, 20, 13]]
         },
         options: chartOptions.bar
       }
@@ -240,19 +240,19 @@
         type: 'bar',
         data: {
           labels: chartOptions.labels.education,
-          series: [[1, 13, 3, 5, 100, 37]]
+          series: [[1, 16, 4, 16, 215, 80]]
         },
         options: chartOptions.bar
       },
       {
-        name: "managementPos",
+        name: "overall",
         selector: ".ct-chart3",
-        optTotal: chartOptions.manageTotal,
+        optTotal: chartOptions.overallTotal,
         percentage: true,
         type: 'bar',
         data: {
           labels: chartOptions.labels.education,
-          series: [[0, 7, 1, 13, 145, 56]]
+          series: [[2, 105, 22, 63, 832, 220]]
         },
         options: chartOptions.bar
       }
@@ -290,19 +290,19 @@
         type: 'bar',
         data: {
           labels: chartOptions.labels.age,
-          series: [[1, 35, 92, 28, 4, 0]]
+          series: [[2, 114, 150, 61, 7, 1]]
         },
         options: chartOptions.bar
       },
       {
-        name: "managementPos",
+        name: "overall",
         selector: ".ct-chart3",
-        optTotal: chartOptions.manageTotal,
+        optTotal: chartOptions.overallTotal,
         percentage: true,
         type: 'bar',
         data: {
           labels: chartOptions.labels.age,
-          series: [[2, 93, 88, 36, 4, 1]]
+          series: [[93, 597, 396, 147, 18, 1]]
         },
         options: chartOptions.bar
       }
