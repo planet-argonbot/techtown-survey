@@ -16,6 +16,10 @@ Data for this application was collected from a CSV that was provided by Techtown
 
 A ruby program in parser/parse.rb will parse through the CSV columns and find matching users based on your query. See parse.rb file for additional usage information.
 
+Run in your console to initialize the program:
+`cd parser/` (or navigate there however)
+`ruby parse.rb`
+
 ## Javascript Usage
 Chartist.js (https://gionkunz.github.io/chartist-js/) is used to render SVG charts on the page.
 
@@ -23,4 +27,4 @@ The charts-data.js organizes the options for Chartist as well as the data collec
 
 The filter-charts.js handles the logic for building the Charts based on data and options defined in charts-data.js.
 
-The app.js initializes javascript and handles front-end event handlers.
+The app.js initializes the Survey and handles front-end event handlers.
