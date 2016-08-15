@@ -17,8 +17,8 @@ Data for this application was collected from a CSV that was provided by Techtown
 A ruby program in parser/parse.rb will parse through the CSV columns and find matching users based on your query. See parse.rb file for additional usage information.
 
 Run in your console to initialize the program:
-`cd parser/` (or navigate there however)
-`ruby parse.rb`
+* `cd parser/` (or navigate there however)
+* `ruby parse.rb`
 
 ## Javascript Usage
 Chartist.js (https://gionkunz.github.io/chartist-js/) is used to render SVG charts on the page.
