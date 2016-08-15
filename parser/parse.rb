@@ -1,6 +1,9 @@
 require 'csv'
 require 'pry'
 
+# Purpose of this file is to parse the csv data and make comparisons between the selected users.
+# We used this file by running the parse.rb program in our ruby console.
+
 # The create_attr and create_method methods in the User class are used to create attributes/methods for each of the HEADER values
 # http://stackoverflow.com/a/4082937/3294591
 
