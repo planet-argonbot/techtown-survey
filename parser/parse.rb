@@ -94,8 +94,14 @@ class User
 end
 
 class UserGroup < Array
-  # creates new UserGroup class and returns filtered users
+  # Example usage: Find user by HEADER defined above, match value from CSV column.
+  # @users.find_user('male', '1') - will return Array of Objects.
+  # You may use an array of keys OR values to compare. Ex:
+  # @users.find_user(['male', 'female'], '1') - will return all participants that selected male or female for their gender.
+  # OR
+  # @users.find_user('leadership_position', ['1', '2', '3']) - returns all participants that have selected option 1, 2, or 3.
   def find_user(key, value)
+    # creates new UserGroup class and returns filtered users
     new_class = UserGroup.new
 
     if (value.kind_of?(Array) || key.kind_of?(Array))
@@ -163,6 +169,7 @@ end
 
 @users = UserGroup.new
 
+# Creating an array of all survey participants
 def create_user_profile(data, id)
   person = User.new
   data.each do |key, value|

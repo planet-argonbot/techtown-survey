@@ -8,6 +8,7 @@ var Survey = (function() {
     init: function() {
       var self = this;
 
+      // Every chart filters upon gender first
       this.buildCharts("gender");
     },
 
