@@ -5,6 +5,8 @@
 
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:description" content="A survey representing the state of diversity in Portland's Tech Industry in 2016. The data is collected from 23 companies signing a pledge to further diversity in tech.">
+  <meta name="twitter:description" content="A survey representing the state of diversity in Portland's Tech Industry in 2016. The data is collected from 23 companies signing a pledge to further diversity in tech.">
   <meta property="og:site_name" content="TechTown Diversity Survey 2016, Portland">
   <meta property="og:title" content="TechTown Diversity Survey 2016, Portland">
   <meta name="twitter:title" content="TechTown Diversity Survey 2016, Portland">
@@ -16,7 +18,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700|Varela+Round" rel="stylesheet">
   <link rel="stylesheet" href="bower_components/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.css">
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+<!--   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"> -->
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
