@@ -6,12 +6,10 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Techtown Portland Diversity Survey
+title: Techtown Portland Diversity Survey 2016
 email: hello@planetargon.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  A survey representing the state of diversity in Portland's Tech Industry in 2016. The data is collected from 23 companies signing a pledge to further diversity in tech.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: jekyllrb
