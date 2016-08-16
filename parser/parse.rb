@@ -65,8 +65,7 @@ class User
     "disabled_other",
     "other_underrepresented",
     "do_not_identify",
-    "no_response_other",
-    "other_underrepresented_text"
+    "no_response_other"
   ]
 
   def initialize
