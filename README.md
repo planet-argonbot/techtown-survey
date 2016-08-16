@@ -20,6 +20,8 @@ Run in your console to initialize the program:
 * `cd parser/` (or navigate there however)
 * `ruby parse.rb`
 
+NOTE: The purpose of the parser is not to dynamically insert values into the javascript, it is to loop through the CSV and make an array of User objects that can be counted and compared based upon their answers.
+
 ## Javascript Usage
 Chartist.js (https://gionkunz.github.io/chartist-js/) is used to render SVG charts on the page.
 
