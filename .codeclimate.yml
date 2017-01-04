@@ -1,0 +1,3 @@
+exclude_paths:
+- "bower_components/"
+- "vendor/"
