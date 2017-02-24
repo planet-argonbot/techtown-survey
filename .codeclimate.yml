@@ -1,8 +1,8 @@
-JavaScript: true
-Ruby: true
-Python: false
-PHP: false
-
+languages:
+  JavaScript: true
+  Ruby: true
+  Python: false
+  PHP: false
 exclude_paths:
-- bower_components/
-- vendor/
+- bower_components/**
+- vendor/**
